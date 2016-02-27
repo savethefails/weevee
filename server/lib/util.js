@@ -24,31 +24,35 @@
 import messages from '../models/messages'
 import options from '../models/options'
 import profiles from '../models/profiles'
+import locations from '../models/locations'
+import events from '../models/events'
 import _ from 'lodash'
 
-const entities = {
+const models = {
   messages,
   options,
-  profiles
+  profiles,
+  locations,
+  events
 }
-export function makePayload(messageType = '', optionTypes = []){
+export function makePayload(messageType = '', options = []){
   return {
     messages: findMessages(messageType),
-    options: findOptions(optionTypes)
+    options
   }
 }
 
 function findMessages(type){
-  let entities = []
+  let messageModels = []
   if (_.isFunction(type)) return type()
   if (_.isObject(type)) {
-    entities = Object.values(type)[0]
+    messageModels = Object.values(type)[0]
     type = Object.keys(type)[0]
   }
   let buildMessages = (messages[type] || []).map( (message, index) => {
     let payload = {}
     if (_.isArray(message)) message = _.sample(message)
-    message = makeMessageEntitySpecific(message, entities)
+    message = makeMessageEntitySpecific(message, messageModels)
     if (!message) {
       return null
     }
@@ -104,25 +108,60 @@ export function findEntityByUri(uri){
   const type = keys[keys.length - 2]
   const id = keys[keys.length - 1]
 
-  return findById(entities[type], id)
+  return findById(models[type], id)
 }
 
-function makeMessageEntitySpecific(message = '', entities = []){
-  const events = _.filter(entities, ['type', 'Event'])
+function makeMessageEntitySpecific(message = '', models = []){
+  const events = _.filter(models, ['type', 'Event'])
   message = message.replace("{eventsTotal}", events.length)
-  entities.forEach( entity => {
+  models.forEach( model => {
     if(!_.isString(message)) return message
-    if (_.isString(entity)) entity = findEntityByUri(entity)
-    if (entity.type === 'Profile'){
-      console.log();
-      console.log(message, message.indexOf("{profileCard}"));
-
-      if (message.indexOf("{profileCard}") > -1) return message = entity
-
-      message = message.replace("{profileFirstName}", entity.text.split()[0])
-      message = message.replace("{profileFullName}", entity.text)
-
+    if (_.isString(model)) model = findEntityByUri(model)
+    if (model.type === 'Profile'){
+      if (message.indexOf("{profileCard}") > -1) return message = model
+      message = message.replace("{profileFirstName}", model.text.split()[0])
+      message = message.replace("{profileFullName}", model.text)
+    }
+    if (model.type === 'Event'){
+      const month = model.start.getMonth() + 1
+      const day = model.start.getDay()
+      const hour = model.start.getHours()
+      const minute = model.start.getMinutes()
+      message = message.replace("{eventDate}", "" + month + "/" + day)
+      message = message.replace("{eventTime}", `${hour}:${minute}`)
     }
   })
   return message
+}
+
+export function makeBasketUri(model){
+  return `baskets/${model.type.toLowerCase()}/${model.id}`
+}
+
+
+export function findRelatedModel(targetModel, modelType){
+  return _.find(models[modelType], (destModel) => {
+    const targetModelRef = targetModel.type.toLowerCase()
+    const targetModelRefs = targetModelRef + 's'
+    let relatedModel = destModel[targetModelRef]
+    const relatedCollections = destModel[targetModelRefs]
+    if (relatedCollections) {
+      relatedCollections.forEach((collectionModel) => {
+        // console.log();
+        // console.log('collectionModel', collectionModel);
+        // console.log();
+        // console.log('collectionModel.id == targetModel.id', collectionModel.id == targetModel.id);
+
+        if(collectionModel.id == targetModel.id) relatedModel = collectionModel
+      })
+    }
+    // console.log();
+    // console.log('relatedModel -->', relatedModel);
+
+    if (relatedModel && relatedModel.id === targetModel.id) return relatedModel
+    // console.log();
+    // console.log("relatedModel && relatedModel.id === targetModel.id", relatedModel && relatedModel.id === targetModel.id);
+
+    return false
+  })
 }
