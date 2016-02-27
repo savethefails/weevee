@@ -1,12 +1,12 @@
 import { Router } from 'express'
 import {makePayload} from '../lib/util'
-import profiles from './profiles'
+import profiles from '../models/profiles'
 export default function() {
   const api = Router({mergeParams: true})
   api.get('/', (req, res) => {
-    const data = makePayload('intro', ['profiles'])
-    res.json({data});
+    const payload = makePayload("speaking", () => profiles)
+    res.json(payload);
   });
-  api.use('/profiles', profiles())
+
   return api
 }

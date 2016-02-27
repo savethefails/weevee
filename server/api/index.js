@@ -1,16 +1,10 @@
-import { Router } from 'express';
-import baskets from './baskets';
+import { Router } from 'express'
+import baskets from './baskets'
 
 export default function() {
-	var api = Router();
+	const api = Router()
 
-	api.use('/baskets', baskets());
+	api.use('/baskets', baskets())
 
-	api.get('/', (req, res) => {
-		res.json({
-			version : '1.0'
-		});
-	});
-
-	return api;
+	return api
 }
