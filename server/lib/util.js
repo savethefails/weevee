@@ -44,7 +44,7 @@ function findMessages(type){
     if (message.indexOf('/') === -1){
       payload = {
         type: 'Text',
-        value: message,
+        text: message,
         id: type + index
       }
     } else {

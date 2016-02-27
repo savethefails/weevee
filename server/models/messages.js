@@ -6,9 +6,8 @@ const messages = {
   ],
   speaking: [
     "Our line-up is great this stelar",
-    "We're really excited that",
+    "We're really excited that Dave McClure will be joining us on stage",
     "/profiles/1",
-    "will be joining us on stage",
     "Who else do you want to know about?"
   ]
 }
