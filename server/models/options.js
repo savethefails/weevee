@@ -1,5 +1,5 @@
 const options = {
-  profiles: function(text = "Festival speakers"){
+  profiles: function(text = "Who's presenting at Launch?"){
     return {
       text,
       type: "Profiles",
