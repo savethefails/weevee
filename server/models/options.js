@@ -3,7 +3,7 @@ const options = {
     return {
       text,
       type: "Profiles",
-      url: "api/baskets/profiles"
+      url: "baskets/profiles"
     }
   }
 }
