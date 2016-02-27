@@ -123,6 +123,7 @@ function makeMessageEntitySpecific(message = '', models = []){
       message = message.replace("{profileFullName}", model.text)
     }
     if (model.type === 'Event'){
+      if (message.indexOf("{eventCard}") > -1) return message = model
       const month = model.start.getMonth() + 1
       const day = model.start.getDay()
       const hour = model.start.getHours()
@@ -135,7 +136,7 @@ function makeMessageEntitySpecific(message = '', models = []){
 }
 
 export function makeBasketUri(model){
-  return `baskets/${model.type.toLowerCase()}/${model.id}`
+  return `baskets/${model.type.toLowerCase()}s/${model.id}`
 }
 
 

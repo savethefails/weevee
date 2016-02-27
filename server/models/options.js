@@ -11,18 +11,24 @@ function optionPayLoad(args = {}) {
   }
 }
 const options = {
-  profiles: function(args){
+  profilesrandom: function(args = {}){
     if (!args.text) args.text = "Who's presenting at Launch?"
-    args.uri = "baskets/profiles"
+    args.uri = "baskets/profiles/random"
     return optionPayLoad(args)
   },
   yes: function(args = {}){
     if (!args.text) args.text = _.sample(['Yup', 'Yes please', "Sure", "Tell me more"])
+    if (!args.uri) args.uri = "baskets/keepgoing"
     return optionPayLoad(args)
   },
   no: function(args = {}){
     if (!args.text) args.text = _.sample(['Nope', 'No thanks', "That's ok", "I'll pass", "Not right now"])
-    args.uri = 'baskets/beforeSignOff'
+    if (!args.uri) args.uri = 'baskets/outro'
+    return optionPayLoad(args)
+  },
+  thanks: function(args = {}){
+    if (!args.text) args.text = _.sample(['Thanks', 'Great', 'Looks good', 'Ok'])
+    args.uri = 'baskets/preoutro'
     return optionPayLoad(args)
   }
 }
