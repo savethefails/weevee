@@ -76,8 +76,7 @@ function findOptions(optionTypes = []){
     }
     return payload
   })
-  if (_.isArray(payload)) return payload[0]
-  return payload
+  return _.flatten(payload)
 }
 
 function findByType(collection, type){
