@@ -2,17 +2,22 @@
 const messages = {
   intro: [
      "Welcome to Launch Festival!",
-     "What do you want to know about?"
+     ["Breakfast will be served at 8am today"],
+     ["Our first event is at 10am on the Festival Stage"],
+     ["What can I help you with?"]
   ],
-  speakers: [
+  profiles: [
     "Our line-up is stelar this year",
-    "We're really excited that Dave McClure will be joining us on stage",
-    "/profiles/1",
+    "We're really excited that {profileFullName} will be joining us on stage",
+    "{profileCard}",
     "Who else do you want to know about?"
   ],
-  speaker: [
-    "Sure thing",
-    "Here's :speaker:'s profile"
+  profile: [
+    ["Sure thing", "Let me look", "One second..."],
+    ["Here's {profileFirstName} details", "I found this info about {profileFirstName}"],
+    "{profileCard}",
+    ["{profileFirstName} will be speaking on {eventDate} at {eventTime}", "See {profileFirstName} on stage {eventDate} at {eventTime}"],
+    "Want to know more?"
   ]
 }
 

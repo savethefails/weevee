@@ -39,23 +39,32 @@ export function makePayload(messageType = '', optionTypes = []){
 }
 
 function findMessages(type){
-  return (messages[type] || []).map( (message, index) => {
+  let entities = []
+  if (_.isFunction(type)) return type()
+  if (_.isObject(type)) {
+    entities = Object.values(type)[0]
+    type = Object.keys(type)[0]
+  }
+  let buildMessages = (messages[type] || []).map( (message, index) => {
     let payload = {}
-    if (message.indexOf('/') === -1){
+    if (_.isArray(message)) message = _.sample(message)
+    message = makeMessageEntitySpecific(message, entities)
+    if (!message) {
+      return null
+    }
+    else if (_.isString(message)){
       payload = {
         type: 'Text',
         text: message,
         id: type + index
       }
-    } else {
-      const keys = message.split('/')
-      const type = keys[1]
-      const id = keys[2]
-
-      payload = findById(entities[type], id)
+    }
+    else {
+      payload = message
     }
     return payload
   })
+  return _.compact(buildMessages)
 }
 
 function findOptions(optionTypes = []){
@@ -79,14 +88,41 @@ function findOptions(optionTypes = []){
   return _.flatten(payload)
 }
 
-function findByType(collection, type){
+export function findByType(collection, type){
   return find(collection, 'type', type)
 }
-function findById(collection, id){
+export function findById(collection, id){
   return find(collection, 'id', id)
 }
 
-function find(collection, key, value){
+export function find(collection, key, value){
   return _.find(collection, [key, value])
+}
 
+export function findEntityByUri(uri){
+  const keys = uri.split('/')
+  const type = keys[keys.length - 2]
+  const id = keys[keys.length - 1]
+
+  return findById(entities[type], id)
+}
+
+function makeMessageEntitySpecific(message = '', entities = []){
+  const events = _.filter(entities, ['type', 'Event'])
+  message = message.replace("{eventsTotal}", events.length)
+  entities.forEach( entity => {
+    if(!_.isString(message)) return message
+    if (_.isString(entity)) entity = findEntityByUri(entity)
+    if (entity.type === 'Profile'){
+      console.log();
+      console.log(message, message.indexOf("{profileCard}"));
+
+      if (message.indexOf("{profileCard}") > -1) return message = entity
+
+      message = message.replace("{profileFirstName}", entity.text.split()[0])
+      message = message.replace("{profileFullName}", entity.text)
+
+    }
+  })
+  return message
 }
