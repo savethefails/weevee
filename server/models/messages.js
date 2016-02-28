@@ -25,7 +25,7 @@ const messages = {
     "{profileCard}"
   ],
   profiles: [
-    ["Who do you want to know about?"]
+    ["Here are a few other speakers I found", "I found more inspirational speakers", "I think you'll learn a lot from these speakers"]
   ],
   eventspeakers: [
     ["Sure thing", "Here you go", "Let me pull up the profiles", "Here are their details"]
@@ -52,7 +52,7 @@ const messages = {
   ],
   keepgoing: [
     ["I've always got more to share", "There's always more to know"],
-    ["Tell me what else you're interested in knowing?", "What more can tell you about?"]
+    ["What else are you interested in knowing?", "What more can I tell you about?"]
   ]
 }
 

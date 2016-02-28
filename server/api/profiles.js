@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import {makePayload, findById, findRelatedModel} from '../lib/util'
-import profiles from '../models/profiles'
+import {profiles} from '../models'
 import _ from 'lodash'
 import options from '../models/options'
 export default function() {
@@ -17,7 +17,10 @@ export default function() {
     res.json({data});
   });
   api.get('/', (req, res) => {
-    const data = makePayload({"profiles": [_.sample(profiles)]}, profiles)
+    console.log();
+    console.log(profiles.length);
+
+    const data = makePayload("profiles", _.sampleSize(profiles, 3) )
     res.json({data});
   });
   api.get('/:id', (req, res) => {
