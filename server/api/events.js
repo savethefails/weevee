@@ -33,7 +33,7 @@ export default function() {
     }
     const resOptions = [
       options.yes({text: speakerOptionText, uri: event.uri + '/speakers'}),
-      options.yes({text: "Anything else?", uri: 'baskets/days'})
+      options.yes({text: "Anything else?", uri: 'baskets/events/days'})
     ]
 
     const data = makePayload({"day": [event]}, resOptions);
