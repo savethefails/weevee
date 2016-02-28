@@ -12,8 +12,13 @@ function optionPayLoad(args = {}) {
 }
 const options = {
   profilesrandom: function(args = {}){
-    if (!args.text) args.text = "Who's presenting at Launch?"
+    if (!args.text) args.text = _.sample(["Who's presenting?", "Who's speaking?"])
     args.uri = "baskets/profiles/random"
+    return optionPayLoad(args)
+  },
+  eventsintro: function(args = {}){
+    args.text = "What's going on?"
+    args.uri = "baskets/events/intro"
     return optionPayLoad(args)
   },
   yes: function(args = {}){

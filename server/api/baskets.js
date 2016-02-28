@@ -5,7 +5,7 @@ import options from '../models/options'
 import events from './events'
 export default function() {
   const api = Router({mergeParams: true})
-  const introRespOptions = [options.profilesrandom()]
+  const introRespOptions = [options.profilesrandom(), options.eventsintro()]
   api.get('/', (req, res) => {
     const data = makePayload('intro', introRespOptions)
     res.json({data});

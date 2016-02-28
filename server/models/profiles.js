@@ -20,13 +20,51 @@ const models = [
    id: 3,
    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
    company: "Homebrew"
- }
-  // {
-  //   text: "Dave McClure",
-  //   type: "Profile",
-  //   id: 1,
-  //   profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w'
-  // },
+ },
+  {
+    text: "Dave McClure",
+    type: "Profile",
+    id: 4,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: '500 Startups'
+  },
+  {
+    text: "Cameron Teitelman",
+    type: "Profile",
+    id: 5,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: 'StartX'
+  },
+  {
+    text: "Emily Kirsch",
+    type: "Profile",
+    id: 6,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: 'Powerhouse'
+  },
+  // Gil Penchina, SuperAngel; Paige Craig, Arena Ventures, Jenny Fielding, Techstars
+  {
+    text: "Gil Penchina",
+    type: "Profile",
+    id: 7,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: 'SuperAngel'
+  },
+  {
+    text: "Paige Craig",
+    type: "Profile",
+    id: 8,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: 'Arena Ventures'
+  },
+  {
+    text: "Jenny Fielding",
+    type: "Profile",
+    id: 9,
+    profile_url: 'http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=500w',
+    company: 'Techstars'
+  }
+
   // {
   //   text: "Danielle Morril",
   //   type: "Profile",

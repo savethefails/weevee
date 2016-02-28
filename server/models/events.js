@@ -5,15 +5,6 @@ import {makeBasketUri} from '../lib/util'
 const models = [
   {
     type: 'Event',
-    id: 1,
-    Text: 'Breakfast + Demo Pit',
-    profiles: [],
-    start: "Wed Mar 02 2016 08:00 -0800",
-    end: "Wed Mar 02 2016 10:00 -0800",
-    location: 1
-  },
-  {
-    type: 'Event',
     id: 2,
     Text: 'VC Panel',
     profiles: [
@@ -21,8 +12,29 @@ const models = [
       2,
       3
     ],
-    start: "Wed Mar 02 2016 10:00 -0800",
-    end: "Wed Mar 02 2016 10:30 -0800",
+    start: "Mar 02 2016 10:00 -0800",
+    end: "Mar 02 2016 10:30 -0800",
+    location: 1,
+    day: 1
+  },
+  {
+    type: 'Event',
+    id: 3,
+    Text: 'Accelerator Panel',
+    profiles: [4, 5, 6],
+    start: "Mar 03 2016 10:00 -0800",
+    end: "Mar 03 2016 10:30 -0800",
+    location: 1,
+    day: 2,
+  },
+  {
+    type: 'Event',
+    id: 3,
+    Text: 'Angel Panel',
+    profiles: [7, 8, 9],
+    start: "Mar 04 2016 10:00 -0800",
+    end: "Mar 04 2016 10:30 -0800",
+    day: 3,
     location: 1
   }
 ]

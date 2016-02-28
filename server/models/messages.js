@@ -2,12 +2,31 @@
 const messages = {
   intro: [
      "Welcome to Launch Festival!",
-     ["Breakfast will be served at 8am today"],
-     ["Our first event is at 10am"],
      ["What can I help you with?"]
   ],
+  eventsintro: [
+    "First things first",
+    "Breakfast is at 8am - 10am",
+    ["March 2, 3, and 4", "on all 3 days"],
+    "There will also be demos running throughout the festival",
+    "These will take place in the demo pit",
+    "Make sure to check them out",
+    "Also",
+    "Lunch is at 12pm - 2pm everday",
+    "Want to know more?"
+  ],
+  days: [
+    "Ok",
+    "Which day?",
+    "They're all going to be good",
+    "Just saying"
+  ],
+  day: [
+    ["There's a great line up", "There are many great presentations and panels happening"],
+    ["Here's just a few", "Take a look at what I've chosen", "You might like these"]
+  ],
   profilesrandom: [
-    "Our line-up is stelar this year",
+    ["Our line-up is stelar this year", "",""],
     "We're really excited that {profileFullName} will be joining us on stage",
     "{profileCard}"
   ],
@@ -22,9 +41,7 @@ const messages = {
     "Want to know more?"
   ],
   event: [
-    ["Let me paste in all the details"],
-    ["One moment"],
-    ['Here you go'],
+    ["Let me paste in all the details", "Here's more info", "What you need to know is below"],
     "{eventCard}",
   ],
   preoutro: [
