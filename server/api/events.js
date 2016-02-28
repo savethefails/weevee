@@ -48,7 +48,6 @@ export default function() {
     const text = _.sample(event.profiles.length == 1 ? messages.eventspeaker[0] : messages.eventspeakers[0])
     const data = {
       messages: [
-        text,
         ...event.profiles
       ],
       options: resOptions
