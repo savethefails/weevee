@@ -27,6 +27,9 @@ const messages = {
   profiles: [
     ["Who do you want to know about?"]
   ],
+  eventspeakers: [
+    ["Sure thing", "Here you go", "Let me pull up the profiles", "Here are their details"]
+  ],
   profile: [
     ["Sure thing", "Let me look", "One second..."],
     ["Here's {profileFirstName} details", "I found this info about {profileFirstName}"],
@@ -34,7 +37,7 @@ const messages = {
     ["{profileFirstName} will be speaking on {eventDate} at {eventTime}", "See {profileFirstName} on stage {eventDate} at {eventTime}"]
   ],
   event: [
-    ["Grabbing the details for you", "Here's more info", "What you need to know is below"],
+    ["Grabbing the details for you", "Here's more info", "This event looks great", "I'm excited for this one"],
     "{eventCard}",
   ],
   preoutro: [

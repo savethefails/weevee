@@ -97,6 +97,7 @@ export function findByType(collection, type){
   return find(collection, 'type', type)
 }
 export function findById(collection, id){
+  id = parseInt(id)
   return find(collection, 'id', id)
 }
 

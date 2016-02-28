@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import {makePayload, findById, findRelatedModel} from '../lib/util'
-import {profiles, events, options} from '../models'
+import {profiles, events, options, messages} from '../models'
 import _ from 'lodash'
 export default function() {
-  const api = Router({mergeParams: true})
+  const api = Router()
+
   api.get('/intro', (req, res) => {
     const resOptions = [
       options.yes({text: "Tell me more", uri: 'baskets/events/days'}),
@@ -12,6 +13,7 @@ export default function() {
     const data = makePayload("eventsintro", resOptions);
     res.json({data})
   });
+
   api.get('/days', (req, res) => {
     const resOptions = [
       options.yes({text: 'March 2', uri: 'baskets/events/days/1'}),
@@ -22,20 +24,45 @@ export default function() {
     const data = makePayload("days", resOptions);
     res.json({data})
   });
+
   api.get('/days/:id', (req, res) => {
     const event = _.sample(_.filter(events, ['day', parseInt(req.params.id)]))
-    const resOptions = [options.yes({text: "Thanks. Anything else? ", uri: 'baskets/days'})]
+    const speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    const resOptions = [
+      options.yes({text: speakerOptionText, uri: event.uri + '/speakers'}),
+      options.yes({text: "Anything else?", uri: 'baskets/days'})
+    ]
 
     const data = makePayload({"day": [event]}, resOptions);
     res.json({data})
   });
-  api.get('/:id', (req, res) => {
+
+  api.get('/:id/speakers', (req, res) => {
     const event = findById(events, parseInt(req.params.id))
     const resOptions = [
+      options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})
+    ]
+    const text = _.sample(messages.eventspeakers[0])
+    const data = {
+      messages: [
+        text,
+        ...event.profiles
+      ],
+      options: resOptions
+    }
+    res.json({data})
+  })
+
+  api.get('/:id/', (req, res) => {
+    const event = findById(events, parseInt(req.params.id))
+    const speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    const resOptions = [
+      options.yes({text: speakerOptionText, uri: event.uri + '/speakers'}),
       options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})
     ]
     const data = makePayload({"event": [event]}, resOptions)
     res.json({data})
   })
+
   return api
 }
