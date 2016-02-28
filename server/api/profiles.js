@@ -27,7 +27,8 @@ export default function() {
       options.yes({uri: event}),
       options.no({uri: 'baskets/preoutro'})
     ]
-    res.json(makePayload({"profile": [profile, event]}, resOptions))
+    const data = makePayload({"profile": [profile, event]}, resOptions)
+    res.json({data})
   })
   return api
 }
