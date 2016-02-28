@@ -6,19 +6,21 @@ const messages = {
      ["What can I help you with?"]
   ],
   eventsintro: [
-    "Breakfast is at 8am-10am and Lunch is 12-2pm",
-    "There will also be demos running throughout the festival in the demo pit",
+    "There will be demos running throughout the festival in the demo pit",
+    "We also have a great line up of different speakers",
+    "and booths where you can learn about new startups."
   ],
   days: [
-    "Ok",
+    "Sure!",
     "Which day?"
   ],
   day: [
-    ["There's a great line up", "There are many great presentations and panels happening"],
-    ["Here's one you might like", "Take a look at this event"]
+    ["There's a great line up of panels, presentations, and demos", "We have a lot of great presentations and panels happening"],
+    ["Here's one you might like", "Take a look at this"],
+    "{eventCard}"
   ],
   profilesrandom: [
-    ["We have a great line-up of speakers", "There are too many inspirational speakers to name",""],
+    ["We have a great line-up of speakers",""],
     ["We're really excited that {profileFullName} will be joining us on stage", "Have you heard of {profileFullName}?"],
     "{profileCard}"
   ],

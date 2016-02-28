@@ -6,8 +6,8 @@ export default function() {
   const api = Router({mergeParams: true})
   api.get('/intro', (req, res) => {
     const resOptions = [
-      options.yes({text: "Tell me about events", uri: 'baskets/events/days'}),
-      options.yes({text: "Anything else?", uri: 'baskets/keepgoing'})
+      options.yes({text: "Tell me more", uri: 'baskets/events/days'}),
+      options.yes({text: "Thanks", uri: 'baskets/keepgoing'})
     ]
     const data = makePayload("eventsintro", resOptions);
     res.json({data})
@@ -23,15 +23,16 @@ export default function() {
     res.json({data})
   });
   api.get('/days/:id', (req, res) => {
-    const resOptions = [_.sample(_.filter(events, ['day', parseInt(req.params.id)])), options.yes({text: "What else?", uri: 'baskets/days'})]
+    const event = _.sample(_.filter(events, ['day', parseInt(req.params.id)]))
+    const resOptions = [options.yes({text: "Thanks. Anything else? ", uri: 'baskets/days'})]
 
-    const data = makePayload("day", resOptions);
+    const data = makePayload({"day": [event]}, resOptions);
     res.json({data})
   });
   api.get('/:id', (req, res) => {
     const event = findById(events, parseInt(req.params.id))
     const resOptions = [
-      options.yes({text: "What else?", uri: 'baskets/keepgoing'})
+      options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})
     ]
     const data = makePayload({"event": [event]}, resOptions)
     res.json({data})

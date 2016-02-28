@@ -10,7 +10,7 @@ export default function() {
     const event = findRelatedModel(profile, 'events')
     const resOptions = [
       options.yes({text: 'Tell me more', uri: event.uri}),
-      options.yes({text: 'What about other speakers?', uri: 'baskets/profiles'}),
+      options.yes({text: 'Who else is speaking?', uri: 'baskets/profiles'}),
       options.thanks()
     ]
     const data = makePayload({"profilesrandom": [profile]}, resOptions)
