@@ -6,7 +6,7 @@ const models = [
   {
     type: 'Event',
     id: 2,
-    Text: 'VC Panel',
+    text: 'VC Panel',
     profiles: [
       1,
       2,
@@ -20,7 +20,7 @@ const models = [
   {
     type: 'Event',
     id: 3,
-    Text: 'Accelerator Panel',
+    text: 'Accelerator Panel',
     profiles: [4, 5, 6],
     start: "Mar 03 2016 10:00 -0800",
     end: "Mar 03 2016 10:30 -0800",
@@ -30,7 +30,7 @@ const models = [
   {
     type: 'Event',
     id: 3,
-    Text: 'Angel Panel',
+    text: 'Angel Panel',
     profiles: [7, 8, 9],
     start: "Mar 04 2016 10:00 -0800",
     end: "Mar 04 2016 10:30 -0800",
