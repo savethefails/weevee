@@ -23,7 +23,7 @@ export default function() {
     res.json({data})
   });
   api.get('/days/:id', (req, res) => {
-    const resOptions = [_.sample(_.filter(events, ['day', parseInt(req.params.id)])), options.yes({text: "What else?", uri: 'baskets/keepgoing'})]
+    const resOptions = [_.sample(_.filter(events, ['day', parseInt(req.params.id)])), options.yes({text: "What else?", uri: 'baskets/days'})]
 
     const data = makePayload("day", resOptions);
     res.json({data})
