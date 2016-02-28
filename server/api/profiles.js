@@ -24,8 +24,8 @@ export default function() {
     const profile = findById(profiles, parseInt(req.params.id))
     const event = findRelatedModel(profile, 'events')
     const resOptions = [
-      options.yes({uri: event}),
-      options.no({uri: 'baskets/preoutro'})
+      options.yes({text: "Tell me more", uri: event}),
+      options.yes({text: "Anything else?", uri: 'baskets/keepgoing'})
     ]
     const data = makePayload({"profile": [profile, event]}, resOptions)
     res.json({data})

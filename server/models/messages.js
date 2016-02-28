@@ -1,33 +1,25 @@
 // messages wrap text and a type
 const messages = {
   intro: [
-     "Welcome to Launch Festival!",
+     "Welcome to Launch Festival 2016!",
+     "I'm WeeVee and I'll be your personal conference guide",
      ["What can I help you with?"]
   ],
   eventsintro: [
-    "First things first",
-    "Breakfast is at 8am - 10am",
-    ["March 2, 3, and 4", "on all 3 days"],
-    "There will also be demos running throughout the festival",
-    "These will take place in the demo pit",
-    "Make sure to check them out",
-    "Also",
-    "Lunch is at 12pm - 2pm everday",
-    "Want to know more?"
+    "Breakfast is at 8am-10am and Lunch is 12-2pm",
+    "There will also be demos running throughout the festival in the demo pit",
   ],
   days: [
     "Ok",
-    "Which day?",
-    "They're all going to be good",
-    "Just saying"
+    "Which day?"
   ],
   day: [
     ["There's a great line up", "There are many great presentations and panels happening"],
-    ["Here's just a few", "Take a look at what I've chosen", "You might like these"]
+    ["Here's one you might like", "Take a look at this event"]
   ],
   profilesrandom: [
-    ["Our line-up is stelar this year", "",""],
-    "We're really excited that {profileFullName} will be joining us on stage",
+    ["We have a great line-up of speakers", "There are too many inspirational speakers to name",""],
+    ["We're really excited that {profileFullName} will be joining us on stage", "Have you heard of {profileFullName}?"],
     "{profileCard}"
   ],
   profiles: [
@@ -37,11 +29,10 @@ const messages = {
     ["Sure thing", "Let me look", "One second..."],
     ["Here's {profileFirstName} details", "I found this info about {profileFirstName}"],
     "{profileCard}",
-    ["{profileFirstName} will be speaking on {eventDate} at {eventTime}", "See {profileFirstName} on stage {eventDate} at {eventTime}"],
-    "Want to know more?"
+    ["{profileFirstName} will be speaking on {eventDate} at {eventTime}", "See {profileFirstName} on stage {eventDate} at {eventTime}"]
   ],
   event: [
-    ["Let me paste in all the details", "Here's more info", "What you need to know is below"],
+    ["Grabbing the details for you", "Here's more info", "What you need to know is below"],
     "{eventCard}",
   ],
   preoutro: [
@@ -52,7 +43,6 @@ const messages = {
     ["Well thanks for hanging out", "Catch you later", "Have a great time at the festival!", "Till next time"]
   ],
   keepgoing: [
-    ["Great", "Super", "Sure thing"],
     ["I've always got more to share", "There's always more to know"],
     ["Tell me what else you're interested in knowing?", "What more can tell you about?"]
   ]

@@ -27,6 +27,7 @@ import profiles from '../models/profiles'
 import locations from '../models/locations'
 import events from '../models/events'
 import _ from 'lodash'
+import moment from 'moment'
 
 const models = {
   messages,
@@ -124,12 +125,11 @@ function makeMessageEntitySpecific(message = '', models = []){
     }
     if (model.type === 'Event'){
       if (message.indexOf("{eventCard}") > -1) return message = model
-      const month = model.start.getMonth() + 1
-      const day = model.start.getDay()
-      const hour = model.start.getHours()
-      const minute = model.start.getMinutes()
-      message = message.replace("{eventDate}", "" + month + "/" + day)
-      message = message.replace("{eventTime}", `${hour}:${minute}`)
+      const start = moment(model.start)
+      const date = start.format("D")
+      const time = start.format("h:mma")
+      message = message.replace("{eventDate}", "March " + date)
+      message = message.replace("{eventTime}", time)
     }
   })
   return message
