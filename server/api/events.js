@@ -27,7 +27,10 @@ export default function() {
 
   api.get('/days/:id', (req, res) => {
     const event = _.sample(_.filter(events, ['day', parseInt(req.params.id)]))
-    const speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    let speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    if (event.profiles.length == 1) {
+      speakerOptionText = speakerOptionText.replace("the speakers", event.profiles[0].text.split(' ')[0])
+    }
     const resOptions = [
       options.yes({text: speakerOptionText, uri: event.uri + '/speakers'}),
       options.yes({text: "Anything else?", uri: 'baskets/days'})
@@ -42,7 +45,7 @@ export default function() {
     const resOptions = [
       options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})
     ]
-    const text = _.sample(messages.eventspeakers[0])
+    const text = _.sample(event.profiles.length == 1 ? messages.eventspeaker[0] : messages.eventspeakers[0])
     const data = {
       messages: [
         text,
@@ -55,7 +58,10 @@ export default function() {
 
   api.get('/:id/', (req, res) => {
     const event = findById(events, parseInt(req.params.id))
-    const speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    let speakerOptionText = _.sample(["Tell me about the speakers", "Anything more about the speakers?"])
+    if (event.profiles.length == 1) {
+      speakerOptionText = speakerOptionText.replace("the speakers", event.profiles[0].text.split(' ')[0])
+    }
     const resOptions = [
       options.yes({text: speakerOptionText, uri: event.uri + '/speakers'}),
       options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})

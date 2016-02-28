@@ -1,8 +1,7 @@
 import {makeBasketUri} from '../lib/util'
 const models = [
  {
-   text: "Aileen Lee",
-   type: "Profile",
+  text: "Aileen Lee",
    id: 1,
    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/569024280ab377f58005c9ac/1452287073541/Aileen+Lee.jpg?format=300w",
    description: "Aileen Lee is an American seed investor who was a venture capital investor. She joined Kleiner Perkins Caufield & Byers in 1999 and was founding CEO of RMG Networks, a company backed by KPCB. She later founded Cowboy Ventures.",
@@ -10,8 +9,7 @@ const models = [
    company: "Cowboy Ventures"
  },
  {
-   text: "Jed Katz",
-   type: "Profile",
+  text: "Jed Katz",
    id: 2,
    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56536d49e4b0a9af8dd8a7aa/1448308365810/Jed+Katz.jpg?format=300w",
    description: "One of the pioneers of Internet commerce, Jed has spent his career developing, advising and investing in early stage technology ventures. Prior to joining Javelin Venture Partners, Jed was a Managing Director of DFJ Gotham Ventures in New York. Prior to DFJ Gotham, Jed was the COO of Yamcon, the developer of the highly acclaimed “SkyScout”, one of the best selling astronomy products of all time. ",
@@ -19,8 +17,7 @@ const models = [
    company: "Javelin Venture Partners"
  },
  {
-   text: "Hunter Walk",
-   type: "Profile",
+  text: "Hunter Walk",
    id: 3,
    profile_url: "http://vni.s3.amazonaws.com/151006144918627.png",
    description: "Before Homebrew, Hunter led consumer product management at YouTube, starting when it was acquired by Google. He originally joined Google in 2003, managing product and sales efforts for AdSense, Google‘s contextual advertising business. His first job in Silicon Valley was as the founding product and marketing guy at Linden Lab. ",
@@ -29,7 +26,6 @@ const models = [
  },
   {
     text: "Dave McClure",
-    type: "Profile",
     id: 4,
     profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/5699347ea12f447c7c8df253/1452881046851/Dave+McClure.jpeg?format=300w",
     description: "Dave McClure is an entrepreneur and angel investor based in the San Francisco Bay Area, who founded and runs the business accelerator 500 Startups. He is often described as one of the super angel investors.",
@@ -38,7 +34,6 @@ const models = [
   },
   {
     text: "Cameron Teitelman",
-    type: "Profile",
     id: 5,
     profile_url: "http://www.youwebinc.com/data_prod/media/orginal/cameron-teitelman-headshot-6754.jpg",
     description: "Cameron created the first ever business accelerator affiliated with Stanford University. Providing student and alumni entrepreneurs with the highest chance of succeeding in their venture by removing the roadblocks to success through removing information, network, and resource barriers. Connecting them with free office space, legal, web services and most importantly mentorship with VCs, Angels, and seasoned entrepreneurs. ",
@@ -47,7 +42,6 @@ const models = [
   },
   {
     text: "Emily Kirsch",
-    type: "Profile",
     id: 6,
     profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56c3cd89f699bb8d36e5f263/1455672738587/Emily+Kirsch.jpg?format=300w",
     description: "Startup founder, investor in BrightCurrent, UtilityAPI, PVComplete and Ra Power Management. Worked with former advisor to President Obama, Van Jones, at the Ella Baker Center. Launched and led the Green Jobs Corps, the Climate Action Coalition, and the Oakland Solar Mosaic Pilot. Author of Making Green Work and Creating Climate Action in Your Community. New Leaders Council Alumni and Young Climate Leaders Fellow.",
@@ -56,7 +50,6 @@ const models = [
   },
   {
     text: "Gil Penchina",
-    type: "Profile",
     id: 7,
     profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56980c5a5dc6def158490435/1452805311882/Gil+Penchina.jpg?format=300w",
     description: "Gil Penchina is an American business manager. He was formerly the CEO of Wikia Inc., and the vice president and general manager, international at eBay",
@@ -65,7 +58,6 @@ const models = [
   },
   {
     text: "Paige Craig",
-    type: "Profile",
     id: 8,
     profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/56a661345827c3eac64f78ba/5640f91be4b0e6862edb2f1b/1456196504926/Robert+Scoble.jpg?format=300w",
     description: "Paige Craig is a Founder and General Partner of Arena Ventures. He is an experienced angel investor who has invested in over 110 startups in the last seven years, including companies like Lyft, AngelList, Wish, Postmates, Twitter, Styleseat, Zenpayroll, Quizup and more.",
@@ -74,15 +66,64 @@ const models = [
   },
   {
     text: "Jenny Fielding",
-    type: "Profile",
     id: 9,
     profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
     description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
     short_description: "Managing Director at Techstars",
     company: 'Techstars'
+  },
+  {
+    text: "Josh Elman",
+    id: 10,
+    profile_url: "https://gh-prod-ruby-images.s3.amazonaws.com/uploads/ama_post/logo/50/josh_elman.jpg",
+    description: "Josh invests in entrepreneurs building social networks and platforms, mobile apps, new media, and connected devices. Josh currently serves on the boards of Medium, Meerkat, Operator, Discord, and Jelly. Josh also works closely with our investments in Nextdoor and Whosay. Josh led Greylock’s investment in SmartThings, which was acquired by Samsung in 2014.",
+    short_description: "Partner at Greylock, longtime product manager",
+    company: 'Greylock'
+  },
+  {
+    text: "Abigail Keifer",
+    id: 11,
+    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    description: "Abigail co-founded Red Clay in 2011. Red Clay is a platform built to design exceptional products. It gives any company, from a startup to global enterprise, access to hundreds of vetted freelance designers and provides software to manage an entire design process to go from concept to prototyping within weeks.",
+    short_description: "Co-Founder and CEO of Red Clay",
+    company: 'Red Clay'
+  },
+  ///---- @TODO----//
+  {
+    text: "Anneke Jong",
+    company: 'Reserve',
+    id: 12,
+    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
+    short_description: "Managing Director at Techstars"
+  },
+  {
+    text: "Jeffrey Pfeffer",
+    company: 'Stanford School',
+    id: 13,
+    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
+    short_description: "Managing Director at Techstars"
+  },
+  {
+    text: "Prayag Narula",
+    company: 'LeadGenius',
+    id: 14,
+    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
+    short_description: "Managing Director at Techstars"
+  },
+  {
+    id: 15,
+    text: " Rob May",
+    company: 'Talla',
+    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
+    short_description: "Managing Director at Techstars"
   }
 ]
 models.forEach((model) => {
+  model.type = "Profile"
   model.uri = makeBasketUri(model)
 })
 

@@ -30,6 +30,9 @@ const messages = {
   eventspeakers: [
     ["Sure thing", "Here you go", "Let me pull up the profiles", "Here are their details"]
   ],
+  eventspeaker: [
+    ["Sure thing", "Here you go", "Let me pull up the profile", "Here are the details"]
+  ],
   profile: [
     ["Sure thing", "Let me look", "One second..."],
     ["Here's {profileFirstName} details", "I found this info about {profileFirstName}"],
