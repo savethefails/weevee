@@ -83,7 +83,7 @@ const models = [
   {
     text: "Abigail Keifer",
     id: 11,
-    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
+    profile_url: "http://blog.housewares.org/wp-content/uploads/2015/02/AKiefer_RedClay_Photo-resize-300x300.png",
     description: "Abigail co-founded Red Clay in 2011. Red Clay is a platform built to design exceptional products. It gives any company, from a startup to global enterprise, access to hundreds of vetted freelance designers and provides software to manage an entire design process to go from concept to prototyping within weeks.",
     short_description: "Co-Founder and CEO of Red Clay",
     company: 'Red Clay'
@@ -93,33 +93,33 @@ const models = [
     text: "Anneke Jong",
     company: 'Reserve',
     id: 12,
-    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
-    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
-    short_description: "Managing Director at Techstars"
+    profile_url: "https://pbs.twimg.com/profile_images/621569881591287808/iNTQgOlD.jpg",
+    description: "As VP of Operations & Marketing, Anneke leads the business side of Reserve. She joined the company from the Google Creative Lab where she led teams building the future of tech. A startup veteran, she is an experienced entrepreneur and storyteller who speaks and writes on topics related to technology and mentorship.",
+    short_description: "VP of Operations and Marketing at Reserve"
   },
   {
     text: "Jeffrey Pfeffer",
     company: 'Stanford School',
     id: 13,
-    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
-    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
-    short_description: "Managing Director at Techstars"
+    profile_url: "https://www.gsb.stanford.edu/sites/gsb/files/styles/270x270/public/person_photos/SGSB-0349-Jeffrey_PfefferRT.jpg?itok=L8694Hyb",
+    description: "Jeffrey Pfeffer, is an American business theorist and the Thomas D. Dee II Professor of Organizational Behavior at the Graduate School of Business, Stanford University, and is considered one of today's most influential management thinkers.",
+    short_description: "Professor of Organizational Behavior at the Graduate School of Business, Stanford University"
   },
   {
     text: "Prayag Narula",
     company: 'LeadGenius',
     id: 14,
-    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
-    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
-    short_description: "Managing Director at Techstars"
+    profile_url: "http://inacademy.eu/executive-training/assets/img/Speaker/Prayag.jpg",
+    description: "Prayag Narula is the co-founder and CEO at LeadGenius. LeadGenius is a demand generation automation company that use a combination of data mining, technology and crowdsourcing to automate and accelerate outbound sales and marketing for hundreds of mid-market and enterprise companies from around the world.",
+    short_description: "Co-founder and CEO at LeadGenius"
   },
   {
     id: 15,
-    text: " Rob May",
+    text: "Rob May",
     company: 'Talla',
-    profile_url: "http://static1.squarespace.com/static/56311fdae4b0b8356ef61530/5640f90ce4b0cdd4e931af27/56cbc338ab48def1a6f68aca/1456194931406/JennyFielding21.jpg?format=300w",
-    description: "Jenny Fielding is a Managing Director at Techstars where she focuses on IoT/Hardware and FinTech. Previously, Jenny ran Ventures for BBC Worldwide where she invested in early stage digital media companies. She also founded BBC Labs, a corporate startup accelerator. Jenny has a long history in the tech industry, co-founding start-ups such as Switch-Mobile, a disruptive VoIP mobile software company, that was acquired in 2008.",
-    short_description: "Managing Director at Techstars"
+    profile_url: "https://pbs.twimg.com/profile_images/3778534559/26cd30c321797ee3d8a3cd7410fc57d0_400x400.png",
+    description: "Rob May is the co-founder and CEO of Talla, a Massachusetts-based developer of an intelligent virtual assistant for recruiting teams.",
+    short_description: "Co-founder and CEO at Talla"
   }
 ]
 models.forEach((model) => {
