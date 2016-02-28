@@ -45,14 +45,9 @@ export default function() {
     const resOptions = [
       options.yes({text: "Thanks!", uri: 'baskets/keepgoing'})
     ]
-    const text = _.sample(event.profiles.length == 1 ? messages.eventspeaker[0] : messages.eventspeakers[0])
-    const data = {
-      messages: [
-        text,
-        ...event.profiles
-      ],
-      options: resOptions
-    }
+    const m = event.profiles.length == 1 ? "eventspeaker" : "eventspeakers"
+    const data = makePayload(m, resOptions);
+    data.messages = data.messages.concat(event.profiles)
     res.json({data})
   })
 
